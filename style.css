@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:'Oswald',font-serif;
+    color:white;
+}
+
+/* Background */
+
+body{
+    background:url("bg.jpg") center center/cover no-repeat fixed;
+    position:relative;
+}
+
+/* Blurred background */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:-40px;
+
+    background:inherit;
+    background-size:cover;
+    background-position:center;
+
+    filter: blur(12px) brightness(.65) saturate(1.1);;
+    transform:scale(1.08);
+
+    z-index:-2;
+}
+
+/* Overlay */
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(255,255,255,.05),
+    transparent 40%),
+
+    linear-gradient(
+    rgba(5,12,20,.45),
+    rgba(3,8,15,.55));
+
+    z-index:-1;
+}
+
+/* Hero */
+
+.hero{
+    position:absolute;
+
+    left:70px;
+    top:220px;
+}
+
+/* Hello */
+
+#typewriter{
+
+    font-size:8rem;
+    font-weight:300;
+    line-height:.95;
+    letter-spacing:-4px;
+
+    display:inline-block;
+    white-space:nowrap;
+
+    border-right:3px solid white;
+
+    animation:blink .8s infinite;
+}
+
+.finished{
+    border-right:none;
+}
+
+@keyframes blink{
+
+    50%{
+        border-color:transparent;
+    }
+
+}
+
+/* Subtitle */
+
+.hero h2{
+
+    font-size:3rem;
+    font-weight:300;
+
+    margin-top:20px;
+    margin-left:8px;
+}
+
+/* Quote */
+
+.hero p{
+
+    font-size:1.5rem;
+    color:rgba(255,255,255,.7);
+
+    margin-top:15px;
+    margin-left:10px;
+    line-height:3px;
+}
+
+.cursor-glow{
+    mix-blend-mode: screen;
+    filter: blur(60px);
+    opacity:.15;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .hero{
+
+        left:35px;
+        top:180px;
+
+    }
+
+    #typewriter{
+        font-size:4.8rem;
+    }
+
+    .hero h2{
+        font-size:2rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+}
+.status{
+    position:fixed;
+    bottom:35px;
+    left:50%;
+    transform:translateX(-50%);
+
+    text-align:center;
+
+    color:rgba(255,255,255,.75);
+
+    font-family:'Inter',sans-serif;
+}
+
+#clock{
+    font-size:1rem;
+    font-weight:500;
+    letter-spacing:1px;
+}
+
+.location{
+    margin-top:4px;
+
+    font-size:.85rem;
+    font-weight:300;
+
+    color:rgba(255,255,255,.5);
+}
