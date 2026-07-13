@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "under construction since 2026.",
         "it's giving... homepage.",
         "nothing interesting. yet.",
-        "go explore the subdomains.",
+        "why are you here?",
     ];
 
     document.getElementById("quote").textContent =
