@@ -1,38 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#07101b" />
     <title>iHooman</title>
-    <meta name="description" content="Hi lol.">
+    <meta name="description" content="Hi lol." />
 
-    <meta property="og:title" content="iHooman">
-    <meta property="og:description" content="Hi lol.">
-    <meta property="og:image" content="https://ihooman.xyz/ihoomanlogo.png">
-    <meta property="og:url" content="https://ihooman.xyz">
-    <meta property="og:type" content="website">
+    <meta property="og:title" content="iHooman" />
+    <meta property="og:description" content="Hi lol." />
+    <meta property="og:image" content="https://ihooman.xyz/ihoomanlogo.png" />
+    <meta property="og:url" content="https://ihooman.xyz" />
+    <meta property="og:type" content="website" />
 
-    <link rel="icon" href="ihoomanlogo.png" type="image/png">
+    <link rel="icon" href="ihoomanlogo.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="intro" id="intro" aria-label="iHooman introduction">
+      <button class="intro-skip" id="intro-skip" type="button">Skip intro</button>
+      <div class="intro-mark" aria-hidden="true">
+        <svg class="butterfly" viewBox="0 0 360 250" role="presentation">
+          <path class="wing wing-left" pathLength="100" d="M171 123C108 104 62 63 78 23c18-44 115 10 101 101-7 43-53 100-84 93-37-9 4-78 76-94Z" />
+          <path class="wing wing-right" pathLength="100" d="M189 123c63-19 109-60 93-100-18-44-115 10-101 101 7 43 53 100 84 93 37-9-4-78-76-94Z" />
+          <circle class="logo-dot" cx="180" cy="76" r="9" />
+          <path class="logo-i" pathLength="100" d="M180 111v61" />
+        </svg>
+        <p class="intro-name"><span class="intro-i">i</span><span class="intro-hooman">hooman</span></p>
+      </div>
+    </section>
 
-    <link rel="stylesheet" href="style.css">
-</head>
+    <div class="cursor-glow" aria-hidden="true"></div>
 
-<body>
+    <main class="hero">
+      <h1 id="typewriter" aria-label="Greeting"></h1>
+      <h2>I'm Hooman.</h2>
+      <p id="quote" class="quote"></p>
+    </main>
 
-   <div class="hero">
-    <h1 id="typewriter"></h1>
+    <footer class="status" aria-label="Current local time and location">
+      <time id="clock"></time>
+      <div class="location">New Delhi, India</div>
+    </footer>
 
-    <h2>I'm Hooman.</h2>
-
-    <p id="quote" class="quote"></p>
-</div>
-
-<div class="status">
-    <div id="clock"></div>
-    <div class="location">New Delhi, India</div>
-</div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
