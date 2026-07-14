@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Oswald:wght@300;400&display=swap');
+@import url('zhttps://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Oswald:wght@300;400&display=swap');
 
 :root {
   color: #fff;
   background: #07101b;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Oswald', font-serif;
 }
 
 * { box-sizing: border-box; }
@@ -167,7 +167,7 @@ body::after {
 .hero p {
   margin: clamp(.65rem, 1.5vw, .95rem) 0 0 clamp(.1rem, .8vw, .6rem);
   color: rgba(255,255,255,.76);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Oswald', font-serif;
   font-size: clamp(.95rem, 2.4vw, 1.25rem);
   font-weight: 300;
   line-height: 1.45;
