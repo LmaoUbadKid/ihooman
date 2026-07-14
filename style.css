@@ -101,9 +101,10 @@ body::after {
   font-weight: 300;
   letter-spacing: .22em;
   letter-spacing: .34em;
-  text-indent: .17em;
+  text-indent: 0;
   line-height: 1;
   white-space: nowrap;
+  transform: translateX(-.17em);
 }
 
 .intro-i, .intro-hooman { display: inline-block; opacity: 0; transform: translateY(12px); }
@@ -203,6 +204,91 @@ body::after {
 
 .cursor-glow.visible { opacity: 1; }
 
+.social-panel {
+  position: fixed;
+  top: 50%;
+  right: clamp(1.25rem, 4vw, 4rem);
+  z-index: 2;
+  min-width: 10rem;
+  opacity: 0;
+  pointer-events: none;
+  text-align: right;
+  transform: translate(1.5rem, -50%);
+  transition: opacity .35s ease, transform .35s cubic-bezier(.2, .8, .2, 1);
+}
+
+.social-panel.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(0, -50%);
+}
+
+.social-label, .social-hint {
+  margin: 0;
+  color: rgba(255, 255, 255, .45);
+  font: 300 .7rem/1.4 'Inter', sans-serif;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.social-links {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: auto;
+  gap: .7rem;
+  margin-top: .75rem;
+}
+.social-links > * {
+  color: rgba(255, 255, 255, .9);
+  display: grid;
+  flex: 0 0 1.35rem;
+  width: 1.35rem !important;
+  height: 1.35rem !important;
+  place-items: center;
+  text-decoration: none;
+  transition: color .2s ease, transform .2s ease;
+}
+.social-links > * svg { display: block; width: 100% !important; height: 100% !important; max-width: 100%; max-height: 100%; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
+.social-links .social-fill { fill: currentColor; stroke: none; }
+.social-links > *:hover, .social-links > *:focus-visible { color: #fff; outline: none; transform: translateY(-.2rem); }
+
+.discord-profile { position: relative; cursor: default; }
+.discord-profile::after {
+  content: attr(data-username);
+  position: absolute;
+  top: 50%;
+  right: calc(100% + .7rem);
+  padding: .35rem .5rem;
+  border-radius: .25rem;
+  background: rgba(4, 8, 14, .92);
+  color: #fff;
+  font: 400 .7rem/1 'Inter', sans-serif;
+  letter-spacing: .02em;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) translateX(.3rem);
+  transition: opacity .2s ease, transform .2s ease;
+  white-space: nowrap;
+}
+.discord-profile:hover::after { opacity: 1; transform: translateY(-50%) translateX(0); }
+
+.social-hint {
+  margin-top: .65rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: .6rem;
+  letter-spacing: .1em;
+}
+.social-hint:hover, .social-hint:focus-visible { color: rgba(255, 255, 255, .9); outline: none; }
+
+@media (min-width: 481px) {
+  .social-hint::after { content: ' · or press Enter'; }
+}
+
 @media (max-width: 480px) {
   .intro-mark { width: min(84vw, 21rem); }
   .intro-name { font-size: clamp(1.7rem, 9vw, 2.5rem); }
@@ -212,6 +298,8 @@ body::after {
   #typewriter { font-size: clamp(3.2rem, 16vw, 4.7rem); letter-spacing: -2px; }
   .hero h2 { font-size: 2rem; }
   .status { bottom: max(1.25rem, env(safe-area-inset-bottom)); width: calc(100% - 2rem); }
+  .social-panel { right: 1.25rem; top: auto; bottom: 5.25rem; transform: translateY(1rem); }
+  .social-panel.is-visible { transform: translateY(0); }
 }
 
 @media (hover: none), (pointer: coarse) { .cursor-glow { display: none; } }

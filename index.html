@@ -32,6 +32,38 @@
 
     <div class="cursor-glow" aria-hidden="true"></div>
 
+    <aside class="social-panel" id="social-panel" aria-label="Social links" aria-hidden="true">
+      <p class="social-label">find me elsewhere</p>
+      <!-- Replace each LINK with your own profile link. -->
+      <nav class="social-links">
+        <a
+  class="social-profile discord-profile"
+  data-username="ihooman"
+  aria-label="Discord"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M7.4 6.2A15 15 0 0 0 5 7l.6 1.1A11 11 0 0 0 4 9.3c.1 3.6 1.8 6.5 4.2 8.1.8-.4 1.5-.8 2.1-1.3l-.5-.4.9.4a8.5 8.5 0 0 0 2.6 0l.9-.4-.5.4c.6.5 1.3.9 2.1 1.3 2.4-1.6 4.1-4.5 4.2-8.1a11 11 0 0 0-1.6-1.2L19 7a15 15 0 0 0-2.4-.8l-.5 1a9.7 9.7 0 0 0-3.1-.5c-1.1 0-2.1.2-3.1.5l-.5-1Z"/>
+    <circle cx="9.5" cy="11.5" r="1" class="social-fill"/>
+    <circle cx="14.5" cy="11.5" r="1" class="social-fill"/>
+  </svg>
+</a>
+        <a href="LINK" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12s0-3.2-.4-4.7a2.3 2.3 0 0 0-1.6-1.6C17.5 5.3 12 5.3 12 5.3s-5.5 0-7 .4A2.3 2.3 0 0 0 3.4 7.3C3 8.8 3 12 3 12s0 3.2.4 4.7A2.3 2.3 0 0 0 5 18.3c1.5.4 7 .4 7 .4s5.5 0 7-.4a2.3 2.3 0 0 0 1.6-1.6C21 15.2 21 12 21 12Z"/><path class="social-fill" d="m10 15.5 5-3.5-5-3.5v7Z"/></svg>
+        </a>
+        <a href="LINK" aria-label="Spotify" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M7.5 10.2c3.7-1.1 6.7-.7 9 1M7.8 13c3.1-.9 5.7-.5 7.8.9M8.1 15.6c2.6-.7 4.7-.4 6.4.7"/></svg>
+        </a>
+        <a href="LINK" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="social-fill"/></svg>
+        </a>
+        <a href="LINK" aria-label="Pinterest" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.7 20.2 11 15.1m0 0c.7 1.1 1.7 1.6 2.8 1.6 2.5 0 4.3-2.2 4.3-5 0-2.9-2.3-4.8-5.4-4.8-3.8 0-5.8 2.7-5.8 5 0 1.2.7 2.8 1.8 3.3l.7-2.6c-.2-.4-.3-.9-.3-1.4 0-1.4 1-2.4 2.3-2.4 1.1 0 1.6.8 1.6 1.7 0 1.1-.7 2.7-1.1 3.8-.3 1 .5 1.9 1.5 1.9"/></svg>
+        </a>
+      </nav>
+    </aside>
+
     <main class="hero">
       <h1 id="typewriter" aria-label="Greeting"></h1>
       <h2>I'm Hooman.</h2>
@@ -41,6 +73,7 @@
     <footer class="status" aria-label="Current local time and location">
       <time id="clock"></time>
       <div class="location">New Delhi, India</div>
+      <button class="social-hint" id="social-toggle" type="button">tap for socials</button>
     </footer>
 
     <script src="script.js"></script>
