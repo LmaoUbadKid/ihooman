@@ -1,0 +1,58 @@
+:root { color-scheme: dark; }
+
+* { box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  overflow-x: hidden;
+  color: #f5f9ff;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(61, 150, 221, .18), transparent 28rem),
+    radial-gradient(circle at 85% 85%, rgba(111, 81, 172, .15), transparent 26rem),
+    #07101b;
+  font-family: Inter, sans-serif;
+}
+
+.player {
+  width: min(92vw, 450px);
+  padding: 36px 38px 34px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(187, 223, 255, .14);
+  border-radius: 30px;
+  background: linear-gradient(140deg, rgba(255,255,255,.1), rgba(255,255,255,.035));
+  box-shadow: 0 28px 90px rgba(0,0,0,.48), inset 0 1px rgba(255,255,255,.08);
+  backdrop-filter: blur(20px);
+  text-align: center;
+}
+
+.player::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .36; background-image: linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px); background-size: 22px 22px; mask-image: linear-gradient(to bottom, black, transparent 70%); }
+.player > * { position: relative; }
+
+.player__heading { text-align: left; }
+.eyebrow { display: flex; align-items: center; gap: 8px; margin: 0 0 12px; color: #9bcbed; font: 12px/1 "DM Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+.eyebrow span { width: 7px; height: 7px; border-radius: 50%; background: #91e9c1; box-shadow: 0 0 12px #91e9c1; }
+h1 { margin: 0; font-size: clamp(28px, 7vw, 36px); line-height: 1; letter-spacing: -.06em; }
+h1 em { color: #8edcff; font-style: normal; font-weight: 400; }
+.subtitle { margin: 10px 0 0; color: #a4b1c1; font-size: 13px; }
+
+.vinyl-section { height: 268px; margin: 24px 0 2px; position: relative; display: grid; place-items: center; }
+.record { width: 244px; aspect-ratio: 1; position: relative; border-radius: 50%; background: radial-gradient(circle, #94dbf5 0 9%, #121a22 9.5% 11%, #080b0f 12% 15%, #181d24 16% 19%, #08090c 20% 100%); box-shadow: 0 0 0 1px rgba(255,255,255,.12), 0 22px 30px rgba(0,0,0,.52), 0 0 50px rgba(70,160,255,.15); }
+.record::before { content: ""; position: absolute; inset: 9px; border-radius: inherit; background: repeating-radial-gradient(circle, transparent 0 3px, rgba(255,255,255,.055) 3.7px 4.4px); opacity: .62; }
+.record::after { content: ""; position: absolute; inset: 16px 30% 16px 10%; border-radius: 50%; background: rgba(255,255,255,.12); filter: blur(15px); transform: rotate(-28deg); }
+.record__label { width: 62px; aspect-ratio: 1; z-index: 1; position: absolute; inset: 0; margin: auto; display: grid; place-content: center; gap: 1px; border-radius: 50%; background: #8edcff; color: #07263a; box-shadow: 0 0 0 6px #142634; text-align: center; }
+.record__label span { font-size: 20px; font-weight: 700; letter-spacing: -.1em; }.record__label small { font: 6px "DM Mono", monospace; letter-spacing: .06em; }
+.tonearm { z-index: 2; width: 137px; height: 9px; position: absolute; top: 41px; left: calc(50% + 54px); border-radius: 7px; background: linear-gradient(#eff7fa, #84939c); box-shadow: 1px 2px 5px rgba(0,0,0,.4); transform-origin: 7px center; transform: rotate(-31deg); transition: transform .7s cubic-bezier(.2,.8,.2,1); }
+.tonearm::after { content: ""; width: 13px; height: 18px; position: absolute; right: -4px; top: -5px; border-radius: 2px; background: #d7e1e5; box-shadow: inset 0 -4px #53636c; }.tonearm i { width: 15px; height: 15px; position: absolute; left: -6px; top: -3px; border: 3px solid #8f9fa8; border-radius: 50%; background: #3a4b57; }
+.tonearm-base { z-index: 3; width: 25px; aspect-ratio: 1; position: absolute; top: 27px; left: calc(50% + 47px); border: 6px solid #d8e2e6; border-radius: 50%; background: #526673; box-shadow: 0 2px 5px rgba(0,0,0,.45); }
+.player.playing .record { animation: spin 2.8s linear infinite; }.player.playing .tonearm { transform: rotate(9deg); }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.song { margin-top: 12px; }.song__number { margin: 0 0 6px; color: #86b7d7; font: 11px "DM Mono", monospace; letter-spacing: .1em; }.song h2 { margin: 0; font-size: 25px; letter-spacing: -.045em; }.song p:not(.song__number) { margin: 5px 0 0; color: #aab6c4; font-size: 14px; }
+.timeline { margin: 25px 0 22px; } input[type="range"] { --progress: 28%; width: 100%; height: 4px; margin: 0; display: block; appearance: none; border-radius: 5px; outline: none; background: linear-gradient(90deg, #8edcff var(--progress), rgba(255,255,255,.14) var(--progress)); cursor: pointer; } input[type="range"]::-webkit-slider-thumb { width: 13px; height: 13px; appearance: none; border: 3px solid #eefaff; border-radius: 50%; background: #8edcff; box-shadow: 0 0 12px #8edcff; } input[type="range"]::-moz-range-thumb { width: 8px; height: 8px; border: 3px solid #eefaff; border-radius: 50%; background: #8edcff; box-shadow: 0 0 12px #8edcff; }.timeline__times { display: flex; justify-content: space-between; margin-top: 9px; color: #8a99a9; font: 10px "DM Mono", monospace; }
+.controls { display: flex; justify-content: center; align-items: center; gap: 17px; }.control { display: grid; place-items: center; border: 0; color: white; cursor: pointer; transition: transform .2s, background .2s, box-shadow .2s; }.control:hover { transform: translateY(-2px) scale(1.04); }.control:focus-visible { outline: 2px solid #8edcff; outline-offset: 4px; }.control--secondary { width: 46px; aspect-ratio: 1; border-radius: 50%; background: rgba(137,186,220,.12); font-size: 16px; }.control--secondary:hover { background: rgba(137,186,220,.24); }.control--play { width: 63px; aspect-ratio: 1; padding-left: 3px; border-radius: 50%; background: #8edcff; color: #062139; font-size: 21px; box-shadow: 0 7px 21px rgba(69,177,231,.3); }.control--play:hover { background: #b5eaff; box-shadow: 0 9px 27px rgba(69,177,231,.45); }
+@media (max-width: 440px) { .player { padding: 30px 24px; }.vinyl-section { transform: scale(.92); margin: 12px 0 -10px; }.controls { gap: 12px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iHooman Radio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="player" aria-label="iHooman Radio player">
+      <header class="player__heading">
+        <p class="eyebrow"><span></span> Now on air</p>
+        <h1>iHooman <em>Radio</em></h1>
+        <p class="subtitle">Hooman's fav.</p>
+      </header>
+
+      <section class="vinyl-section" aria-label="Now playing artwork">
+        <div class="record" aria-hidden="true">
+          <div class="record__grooves"></div>
+          <div class="record__label"><span>iH</span><small>VOL. 01</small></div>
+        </div>
+        <div class="tonearm" aria-hidden="true"><i></i></div>
+        <div class="tonearm-base" aria-hidden="true"></div>
+      </section>
+
+      <section class="song" aria-live="polite">
+        <p class="song__number" id="track-number">01 / 03</p>
+        <h2 id="title">Dandelions</h2>
+        <p id="artist">Ruth B.</p>
+      </section>
+
+      <section class="timeline" aria-label="Song progress">
+        <input id="seek" type="range" min="0" max="100" value="28" aria-label="Seek through song" />
+        <div class="timeline__times"><time id="elapsed">0:54</time><time id="duration">3:48</time></div>
+      </section>
+
+      <nav class="controls" aria-label="Playback controls">
+        <button id="prev" class="control control--secondary" type="button" aria-label="Previous song">⏮</button>
+        <button id="play" class="control control--play" type="button" aria-label="Play Dandelions" aria-pressed="false">▶</button>
+        <button id="next" class="control control--secondary" type="button" aria-label="Next song">⏭</button>
+      </nav>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
